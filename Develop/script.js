@@ -13,12 +13,22 @@ var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
 var writePassword = function() {
   window.alert("Welcome to Password Generator! Please answer the following prompts for password criteria.");
 
-  var length = window.prompt("Please enter a number from 8 - 128 for the length of your generated password.")
+  var length = window.prompt("Please enter a number from 8 - 128 for the length of your generated password.");
+  console.log(length);
 
-  window.alert("Please choose which character types to include for your generated password. Enter '1' for lowercase,'2' for uppercase, '3' for numeric, and '4' for special characters.")
+  var charType = window.prompt("Please choose which character types to include for your generated password. Enter '1' for lowercase,'2' for uppercase, '3' for numeric, and '4' for special characters.");
 
-  
-  
+
+  var pass = ''; 
+  var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +  
+            'abcdefghijklmnopqrstuvwxyz0123456789@#$'; 
+      
+  for (i = 1; i <= length; i++) { 
+    var char = Math.floor(Math.random() * str.length + 1); 
+         pass += str.charAt(char);
+    } 
+    window.alert("Your generated password is: " + pass);
+    
 
 }
 
