@@ -7,8 +7,8 @@ This repository contains an application that generates a random password based o
 * JavaScript
 
 ## Screenshots
-![Application-screenshot](/images/screenshot1.png)
-![Application-screenshot](/images/screenshot2.png)
+![Application-screenshot](.Develop/images/screenshot1.png)
+![Application-screenshot](.Develop/images/screenshot2.png)
 
 
 ## Website
