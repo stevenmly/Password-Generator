@@ -4,10 +4,11 @@ This repository contains an application that generates a random password based o
 ## Built With
 * HTML
 * CSS
+* JavaScript
 
 ## Screenshots
-![Application-screenshot](./images/screenshot1.png)
-![Application-screenshot](./images/screenshot2.png)
+![Application-screenshot](/images/screenshot1.png)
+![Application-screenshot](/images/screenshot2.png)
 
 
 ## Website
