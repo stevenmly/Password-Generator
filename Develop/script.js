@@ -1,14 +1,5 @@
 // Assignment code here
 
-// When button is pressed, ask users a series of prompts
-
-// Two prompts, one for length of password and one for character types
-//Prompt #1: Please enter a number from 8 - 128 for the length of your generated password.
-//Prompt #2: Please choose which character types to include for your generated password. Enter '1' for lowercase, 
-// '2' for uppercase, '3' for numeric, and '4' for special characters. 
-
-
-
 var generatePassword = function() {
   // Variables
   var letters = "abcdefghijklmnopqrstuvwxyz"
@@ -17,6 +8,7 @@ var generatePassword = function() {
   var criteria = []
   var password = ""
 
+  //confirm that user wishes to include/not include character type.
   var confirmation = function(words, returnTrue, returnFalse, x) {
     confirm("Are you sure you want to " + x + "include " + words + "?")
     if (confirm) {
@@ -42,6 +34,7 @@ var generatePassword = function() {
       getLength();
     }
   }
+  
   // ask if they want lowercase
   var getLower = function() {
     lowerCase = confirm("Do you want to include lowercase letters in your password?");
