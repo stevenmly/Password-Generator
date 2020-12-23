@@ -15,13 +15,16 @@ var generatePassword = function() {
   var numbers = "0123456789"
   var special = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}"
   var criteria = []
+  var password = ""
 
   var confirmation = function(words, returnTrue, returnFalse, x) {
     confirm("Are you sure you want to " + x + "include " + words + "?")
     if (confirm) {
       returnTrue;
+      return
     } else {
       returnFalse;
+      return
     }
   }
 
@@ -31,7 +34,7 @@ var generatePassword = function() {
     if (!passwordLength) {
       alert("Please enter a valid option.")
       getLength();
-    } else if (parseInt(passwordLength) > 8 && parseInt(passwordLength) < 128) { 
+    } else if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128) { 
       passwordLength = parseInt(passwordLength);
       alert("Your password length is " + passwordLength);
     } else {
@@ -44,8 +47,9 @@ var generatePassword = function() {
     lowerCase = confirm("Do you want to include lowercase letters in your password?");
     if (lowerCase) {
       confirmation("lowercase letters", criteria.push(letters), getLower(), "")
-  } else {
+    } else {
       confirmation("lowercase letters", true, getLower(), "not")
+    }
   }
 
   // ask if they want uppercase
@@ -53,8 +57,9 @@ var generatePassword = function() {
     upperCase = confirm("Do you want to include uppercase letters in your password?");
     if (upperCase) {
       confirmation("uppercase letters", criteria.push(letters.toUpperCase()), getUpper(), "")
-  } else {
+    } else {
       confirmation("uppercase letters", true, getUpper(), "not")
+    }
   }
 
   // ask if they want numeric
@@ -62,8 +67,9 @@ var generatePassword = function() {
     numeric = confirm("Do you want to include numbers in your password?");
     if (numeric) {
       confirmation("numbers", criteria.push(numbers), getNumeric(), "")
-  } else {
+    } else {
       confirmation("numbers", true, getNumeric(), "not")
+    }
   }
 
   // ask if they want special characters
@@ -71,8 +77,9 @@ var generatePassword = function() {
     specialCase = confirm("Do you want to include special characters in your password?");
     if (specialCase) {
       confirmation("special characters", criteria.push(special), getSpecial(), "")
-  } else {
+    } else {
       confirmation("special characters", true, getSpecial(), "not")
+    }
   }
 
   // run functions
@@ -89,14 +96,15 @@ var generatePassword = function() {
     }
   }
 
-getCriteria();
+  getCriteria();
 
-for (i = 0; i < passwordLength; i++) {
-  Math.floor(Math.random() * )
-}
+  for (i = 0; i < passwordLength; i++) {
+    var randomType = criteria[Math.floor(Math.random() * criteria.length)]
+    password = password + randomType[Math.floor(Math.random() * randomType.length)]
+  }
 
   // return password
-  return special;
+  return password;
 }
 
 
