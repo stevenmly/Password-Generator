@@ -7,12 +7,12 @@ This repository contains an application that generates a random password based o
 * JavaScript
 
 ## Screenshots
-![Application-screenshot](.Develop/images/screenshot1.png)
-![Application-screenshot](.Develop/images/screenshot2.png)
+![Application-screenshot](Develop/images/screenshot1.png)
+![Application-screenshot](Develop/images/screenshot2.png)
 
 
 ## Website
-https://stevenmly.github.io/prof-portfolio/
+https://stevenmly.github.io/Password-Generator/
 
 ## Contribution
 Made with ❤️ by Steven Ly
