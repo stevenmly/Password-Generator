@@ -46,9 +46,9 @@ var generatePassword = function() {
   var getLower = function() {
     lowerCase = confirm("Do you want to include lowercase letters in your password?");
     if (lowerCase) {
-      confirmation("lowercase letters", criteria.push(letters), getLower(), "")
+      confirmation("lowercase letters", criteria.push(letters), getLower, "")
     } else {
-      confirmation("lowercase letters", true, getLower(), "not")
+      confirmation("lowercase letters", true, getLower, "not ")
     }
   }
 
@@ -56,9 +56,9 @@ var generatePassword = function() {
   var getUpper = function() {
     upperCase = confirm("Do you want to include uppercase letters in your password?");
     if (upperCase) {
-      confirmation("uppercase letters", criteria.push(letters.toUpperCase()), getUpper(), "")
+      confirmation("uppercase letters", criteria.push(letters.toUpperCase()), getUpper, "")
     } else {
-      confirmation("uppercase letters", true, getUpper(), "not")
+      confirmation("uppercase letters", true, getUpper, "not ")
     }
   }
 
@@ -66,9 +66,9 @@ var generatePassword = function() {
   var getNumeric = function() {
     numeric = confirm("Do you want to include numbers in your password?");
     if (numeric) {
-      confirmation("numbers", criteria.push(numbers), getNumeric(), "")
+      confirmation("numbers", criteria.push(numbers), getNumeric, "")
     } else {
-      confirmation("numbers", true, getNumeric(), "not")
+      confirmation("numbers", true, getNumeric, "not ")
     }
   }
 
@@ -76,9 +76,9 @@ var generatePassword = function() {
   var getSpecial = function() {
     specialCase = confirm("Do you want to include special characters in your password?");
     if (specialCase) {
-      confirmation("special characters", criteria.push(special), getSpecial(), "")
+      confirmation("special characters", criteria.push(special), getSpecial, "")
     } else {
-      confirmation("special characters", true, getSpecial(), "not")
+      confirmation("special characters", true, getSpecial, "not ")
     }
   }
 
@@ -90,15 +90,17 @@ var generatePassword = function() {
     getUpper();
     getNumeric();
     getSpecial();
-    if (!criteria) {
+    if (!criteria || !criteria.length) {
       alert("You need to choose at least one character type.")
       getCriteria();
     }
   }
 
   getCriteria();
-
-  for (i = 0; i < passwordLength; i++) {
+  for (i = 0; i < criteria.length; i++){
+    password = password + criteria[i][Math.floor(Math.random() * criteria[i].length)]
+  }
+  for (i = 0; i < passwordLength - criteria.length; i++) {
     var randomType = criteria[Math.floor(Math.random() * criteria.length)]
     password = password + randomType[Math.floor(Math.random() * randomType.length)]
   }
